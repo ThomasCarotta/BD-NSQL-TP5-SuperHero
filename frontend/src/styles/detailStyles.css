@@ -1,0 +1,28 @@
+/* src/styles/detailStyles.css */
+.hero-detail {
+  max-width: 800px;
+  margin: auto;
+  background-color: #f8f9fa;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+}
+
+.hero-detail h1 {
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.hero-detail p {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero-detail img {
+  border-radius: 6px;
+}
+
+.hero-detail .carousel-inner img {
+  max-height: 400px;
+  object-fit: contain;
+}
