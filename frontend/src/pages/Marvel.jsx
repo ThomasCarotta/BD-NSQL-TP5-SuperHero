@@ -10,7 +10,7 @@ export default function Marvel() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/superheroes/")
+      .get("http://localhost:8001/api/superheroes/")
       .then((res) => {
         const marvelHeroes = res.data.filter(h => h.house === "Marvel");
         setHeroes(marvelHeroes);

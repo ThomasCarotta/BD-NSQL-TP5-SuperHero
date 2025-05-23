@@ -2,7 +2,7 @@ from rest_framework import serializers
 from .models import SuperHero
 
 class SuperHeroSerializer(serializers.Serializer):
-    id = serializers.SerializerMethodField(read_only=True)
+    id = serializers.CharField(read_only=True)  # ✅ Corregido
     name = serializers.CharField()
     real_name = serializers.CharField(allow_blank=True, required=False)
     debut_year = serializers.IntegerField()
@@ -10,12 +10,6 @@ class SuperHeroSerializer(serializers.Serializer):
     biography = serializers.CharField()
     equipment = serializers.CharField(allow_blank=True, required=False)
     images = serializers.ListField(child=serializers.CharField())
-
-    def get_id(self, obj):
-        # Maneja tanto objetos SuperHero como diccionarios
-        if hasattr(obj, 'id'):
-            return str(obj.id)
-        return str(obj.get('_id', ''))
 
     def create(self, validated_data):
         return SuperHero(**validated_data).save()

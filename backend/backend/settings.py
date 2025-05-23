@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import mongoengine
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,7 +27,7 @@ SECRET_KEY = 'django-insecure-2e081ll*f$&ju6j(jk)wndp##idjmbrz2q9wm%&8#v3zml5t-r
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -40,6 +42,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'APISuperHero',
     'corsheaders',
+    'mongoengine',
     
 ]
 
@@ -123,3 +126,10 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOW_ALL_ORIGINS = True
+
+
+mongoengine.connect(
+    db="superheroesdb",
+    host=os.environ.get("MONGO_HOST", "localhost"),
+    port=27017
+)

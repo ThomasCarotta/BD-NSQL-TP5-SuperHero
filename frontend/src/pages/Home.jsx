@@ -14,7 +14,7 @@ export default function Home() {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/api/superheroes/")
+      .get("http://localhost:8001/api/superheroes/")
       .then((res) => {
         setHeroes(res.data);
         setFilteredHeroes(res.data);
@@ -49,7 +49,7 @@ export default function Home() {
   };
 
   const handleCreateSubmit = (data) => {
-    axios.post("http://localhost:8000/api/superheroes/", data)
+    axios.post("http://localhost:8001/api/superheroes/", data)
       .then(() => {
         Swal.fire("Creado", "Superhéroe agregado correctamente", "success")
           .then(() => window.location.reload());

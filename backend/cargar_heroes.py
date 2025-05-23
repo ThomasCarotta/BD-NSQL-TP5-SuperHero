@@ -20,16 +20,13 @@ heroes = [
         "images": ["https://i.imgur.com/SpiderMan1.jpg"]
     },
     {
-        "name": "Batman",
-        "real_name": "Bruce Wayne",
-        "debut_year": 1939,
-        "house": "DC",
-        "biography": "Millonario que combate el crimen en Gotham.",
-        "equipment": "Baticinturón, Batimóvil",
-        "images": [
-            "https://i.imgur.com/Batman1.jpg",
-            "https://i.imgur.com/Batman2.jpg"
-        ]
+        "name": "Iron Man",
+        "real_name": "Tony Stark",
+        "debut_year": 1936,
+        "house": "Marvel",
+        "biography": " Genio multimillonario que construye armaduras tecnológicas para combatir el crimen.",
+        "equipment": "Armadura Mark",
+        "images": ["https://imgs.search.brave.com/VDU9WwqvTE8SR17YTG1OmLDALl80HKsdiuq9NwPIogA/rs:fit:500:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/cGl4YWJheS5jb20v/cGhvdG8vMjAyMy8w/OS8wMi8xOC8yNC9h/aS1nZW5lcmF0ZWQt/ODIyOTM5M182NDAu/cG5n"]
     }
 ]
 

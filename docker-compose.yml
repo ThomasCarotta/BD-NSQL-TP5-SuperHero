@@ -1,13 +1,4 @@
-version: '3.8'
-
 services:
-  mongo:
-    image: mongo:latest
-    container_name: mongo-db
-    ports:
-      - "27017:27017"
-    volumes:
-      - mongo_data:/data/db
 
   backend:
     build: ./backend
@@ -26,12 +17,20 @@ services:
       python cargar_heroes.py &&
       python manage.py runserver 0.0.0.0:8000
       "
+  mongo:
+    image: mongo:latest
+    container_name: mongo-db
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
 
   frontend:
     build: ./frontend
     container_name: react-frontend
+    command: sh -c "npm install && npm run dev -- --host"
     ports:
-      - "3000:80"
+      - "5174:5173"
     depends_on:
       - backend
 

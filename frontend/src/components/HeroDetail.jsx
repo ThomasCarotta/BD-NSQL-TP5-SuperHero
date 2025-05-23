@@ -13,7 +13,7 @@ export default function HeroDetail() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://localhost:8000/api/superheroes/${id}/`)
+    axios.get(`http://localhost:8001/api/superheroes/${id}/`)
       .then(res => setHero(res.data))
       .catch(() => setError("No se pudo cargar el héroe"));
   }, [id]);
@@ -28,7 +28,7 @@ export default function HeroDetail() {
       cancelButtonText: "Cancelar"
     }).then(result => {
       if (result.isConfirmed) {
-        axios.delete(`http://localhost:8000/api/superheroes/${id}/`)
+        axios.delete(`http://localhost:8001/api/superheroes/${id}/`)
           .then(() => {
             Swal.fire("¡Eliminado!", "El superhéroe fue eliminado.", "success")
               .then(() => window.location.href = "/");
@@ -56,7 +56,7 @@ export default function HeroDetail() {
   };
 
   const handleUpdate = (data) => {
-    axios.put(`http://localhost:8000/api/superheroes/${id}/`, data)
+    axios.put(`http://localhost:8001/api/superheroes/${id}/`, data)
       .then(() => {
         Swal.fire("Actualizado", "Superhéroe editado correctamente", "success")
           .then(() => window.location.reload());
